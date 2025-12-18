@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel logowania</title>
+
+  <!-- FAVICON (trybik) -->
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/3/3f/Gear_icon.svg">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1f2937, #111827);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .login-box {
+      background: #1e293b;
+      padding: 30px;
+      width: 320px;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0,0,0,.5);
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 5px;
+      border: none;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .captcha {
+      margin-top: 15px;
+      padding: 10px;
+      background: #020617;
+      border-radius: 5px;
+      font-size: 13px;
+    }
+
+    .error {
+      margin-top: 15px;
+      color: #f87171;
+      text-align: center;
+      display: none;
+    }
+
+    .parody {
+      margin-top: 15px;
+      font-size: 11px;
+      color: #94a3b8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Logowanie</h2>
+
+    <!-- INPUTY NIC NIE ROBIĄ -->
+    <input type="text" placeholder="Login">
+    <input type="password" placeholder="Hasło">
+
+    <div class="captcha">
+      🤖 Weryfikacja anty-bot  
+      <br>Sprawdzanie zachowania użytkownika…
+    </div>
+
+    <button onclick="checkBot()">Zaloguj</button>
+
+    <div class="error" id="error">
+      ❌ Wykryto bota. Dostęp zablokowany.
+    </div>
+
+    <div class="parody">
+    </div>
+  </div>
+
+  <script>
+    function checkBot() {
+      document.getElementById("error").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
+<link rel="icon" type="image/png"
+      href="https://upload.wikimedia.org/wikipedia/commons/3/3f/Gear_icon.svg">
